@@ -30,12 +30,13 @@ const Header = () => {
       }}
     >
       <div className="container">
-        <a
-          className="navbar-brand fw-bold fs-3 text-secondary-custom"
-          href="#home"
-        >
-          Gharsafareats.pk
-        </a>
+        <img
+          src="/logo1.png"
+          alt="Gharsafareats.pk Logo"
+          height="50"
+          className="me-2"
+          style={{ objectFit: "contain" }}
+        />
 
         <button
           className="navbar-toggler"

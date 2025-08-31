@@ -52,10 +52,19 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-lg-4">
             <div className="mb-4">
-              <h3 className="fw-bold mb-3">Gharsafareats.pk</h3>
-              <p className="mb-4 opacity-90 fs-6">
-                "Because home-cooked is always better"
-              </p>
+              <div className="d-flex align-items-center mb-3">
+                <img
+                  src="/logo1.png"
+                  alt="Gharsafareats.pk Logo"
+                  height="60"
+                  className="me-3"
+                  style={{
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)",
+                  }}
+                />
+              </div>
+
               <p className="opacity-75 lh-lg">
                 Delivering fresh, wholesome, home-style meals to offices,
                 hostels, and universities across Islamabad. Made with love,
