@@ -1,0 +1,171 @@
+import React from "react";
+
+const HeroSection = () => {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const slides = [
+    {
+      title: "Homemade food, delivered to your desk.",
+      subtitle:
+        "Fresh meals for office workers, hostel students, and busy professionals.",
+      buttonText: "Order Now",
+      action: () => scrollToSection("order-form"),
+      bgImage: "linear-gradient(135deg, #EC6D00 0%, #ff8c42 100%)",
+    },
+    {
+      title: "Choose your plan, Monday to Friday.",
+      subtitle: "Lunch, dinner, or both — no compromise on taste.",
+      buttonText: "View Menu",
+      action: () => scrollToSection("weekly-plans"),
+      bgImage: "linear-gradient(135deg, #0C1A2D 0%, #1a2f4a 100%)",
+    },
+    {
+      title: "Made with love, packed with care.",
+      subtitle: "Affordable weekly meal plans for people far from home.",
+      buttonText: "Get Started",
+      action: () => scrollToSection("weekly-plans"),
+      bgImage: "linear-gradient(135deg, #EC6D00 0%, #0C1A2D 100%)",
+    },
+  ];
+
+  return (
+    <section id="home" style={{ marginTop: "76px" }}>
+      <div
+        id="heroCarousel"
+        className="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <div className="carousel-indicators">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to={index}
+              className={index === 0 ? "active" : ""}
+            ></button>
+          ))}
+        </div>
+
+        <div className="carousel-inner">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+            >
+              <div
+                className="d-flex align-items-center justify-content-center text-white position-relative"
+                style={{
+                  background: slide.bgImage,
+                  minHeight: "90vh",
+                  position: "relative",
+                }}
+              >
+                <div className="container text-center">
+                  <div className="row justify-content-center">
+                    <div className="col-lg-8">
+                      <h1 className="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
+                        {slide.title}
+                      </h1>
+                      <p className="lead fs-4 mb-5 animate__animated animate__fadeInUp animate__delay-1s">
+                        {slide.subtitle}
+                      </p>
+                      <button
+                        className="btn btn-light btn-lg px-5 py-3 fw-semibold animate__animated animate__fadeInUp animate__delay-2s"
+                        onClick={slide.action}
+                        style={{
+                          borderRadius: "50px",
+                          color: "#0C1A2D",
+                          fontSize: "1.2rem",
+                          transition: "all 0.3s ease",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.target.style.transform = "translateY(-3px)";
+                          e.target.style.boxShadow =
+                            "0 10px 25px rgba(0,0,0,0.2)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.target.style.transform = "translateY(0)";
+                          e.target.style.boxShadow = "none";
+                        }}
+                      >
+                        {slide.buttonText} →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div
+                  className="position-absolute"
+                  style={{ top: "20%", left: "10%", opacity: 0.1 }}
+                >
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      borderRadius: "50%",
+                      background: "white",
+                      animation: "float 3s ease-in-out infinite",
+                    }}
+                  ></div>
+                </div>
+                <div
+                  className="position-absolute"
+                  style={{ bottom: "30%", right: "15%", opacity: 0.1 }}
+                >
+                  <div
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                      borderRadius: "50%",
+                      background: "white",
+                      animation: "float 3s ease-in-out infinite reverse",
+                    }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span className="carousel-control-prev-icon"></span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span className="carousel-control-next-icon"></span>
+        </button>
+      </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default HeroSection;
