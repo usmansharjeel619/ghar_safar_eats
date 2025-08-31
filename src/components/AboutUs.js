@@ -244,34 +244,6 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Background decoration */}
-              <div className="position-absolute top-0 start-0 w-100 h-100 opacity-10">
-                <div
-                  className="position-absolute"
-                  style={{ top: "10%", left: "10%" }}
-                >
-                  <i className="bi bi-stars" style={{ fontSize: "3rem" }}></i>
-                </div>
-                <div
-                  className="position-absolute"
-                  style={{ top: "20%", right: "15%" }}
-                >
-                  <i
-                    className="bi bi-heart-fill"
-                    style={{ fontSize: "2rem" }}
-                  ></i>
-                </div>
-                <div
-                  className="position-absolute"
-                  style={{ bottom: "20%", left: "20%" }}
-                >
-                  <i
-                    className="bi bi-cup-hot-fill"
-                    style={{ fontSize: "2.5rem" }}
-                  ></i>
-                </div>
-              </div>
             </div>
           </div>
         </div>

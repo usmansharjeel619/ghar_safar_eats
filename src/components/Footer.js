@@ -13,13 +13,13 @@ const Footer = () => {
       name: "Instagram",
       icon: "bi-instagram",
       url: "https://instagram.com/gharsafareats",
-      color: "#E4405F",
+      color: "#d62976",
     },
     {
       name: "TikTok",
       icon: "bi-tiktok",
       url: "https://tiktok.com/@gharsafareats",
-      color: "#000000",
+      color: "#25F4EE",
     },
     {
       name: "Facebook",
