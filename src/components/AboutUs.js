@@ -68,29 +68,67 @@ const AboutUs = () => {
                 className="rounded-4 overflow-hidden shadow-lg position-relative"
                 style={{
                   height: "500px",
-                  background:
-                    "linear-gradient(135deg, #EC6D00 0%, #0C1A2D 100%)",
+                  background: "none",
+                  position: "relative",
                 }}
               >
                 {/* Placeholder for founders image */}
-                <div className="d-flex align-items-center justify-content-center h-100 text-white">
-                  <div className="text-center">
-                    <div className="mb-4">
-                      <div
-                        className="bg-white bg-opacity-20 rounded-circle mx-auto d-flex align-items-center justify-content-center mb-3"
-                        style={{ width: "100px", height: "100px" }}
-                      >
-                        <i
-                          className="bi bi-people-fill"
-                          style={{ fontSize: "3rem" }}
-                        ></i>
-                      </div>
-                    </div>
-                    <h4 className="fw-bold mb-2">Abdul Muiz & Asmara</h4>
-                    <p className="mb-0 opacity-90">
+                <img
+                  src="/about-us.jpg"
+                  alt="Founders of Gharsafareats.pk"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                  }}
+                />
+                {/* Overlay for text readability */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    background:
+                      "linear-gradient(135deg, rgba(12,26,45,0.7) 0%, rgba(236,109,0,0.5) 100%)",
+                    zIndex: 1,
+                  }}
+                ></div>
+                {/* Text on image */}
+                <div
+                  className="d-flex align-items-center justify-content-center h-100 text-white"
+                  style={{ position: "relative", zIndex: 2 }}
+                >
+                  <div className="text-center w-100">
+                    <h4
+                      className="fw-bold mb-2"
+                      style={{
+                        textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+                        fontSize: "2rem",
+                      }}
+                    >
+                      Abdul Muiz & Asmara
+                    </h4>
+                    <p
+                      className="mb-0 opacity-90"
+                      style={{
+                        textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+                        fontSize: "1.2rem",
+                      }}
+                    >
                       Founders of Gharsafareats.pk
                     </p>
-                    <p className="small opacity-75 mt-2">
+                    <p
+                      className="small opacity-75 mt-2"
+                      style={{
+                        textShadow: "0 2px 8px rgba(0,0,0,0.7)",
+                        fontSize: "1rem",
+                      }}
+                    >
                       Cooking with love since 2021
                     </p>
                   </div>
@@ -112,7 +150,10 @@ const AboutUs = () => {
               </div>
 
               {/* Stats Cards */}
-              <div className="position-absolute bottom-0 start-0 translate-middle-y ms-4">
+              <div
+                className="position-absolute bottom-0 start-0 translate-middle-y ms-4"
+                style={{ zIndex: 10 }}
+              >
                 <div
                   className="card border-0 shadow-lg"
                   style={{ width: "200px" }}
@@ -124,7 +165,10 @@ const AboutUs = () => {
                 </div>
               </div>
 
-              <div className="position-absolute top-0 end-0 translate-middle-y me-4">
+              <div
+                className="position-absolute top-0 end-0 translate-middle-y me-4"
+                style={{ zIndex: 10 }}
+              >
                 <div
                   className="card border-0 shadow-lg"
                   style={{ width: "180px" }}
