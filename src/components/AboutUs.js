@@ -14,29 +14,32 @@ const AboutUs = () => {
           <div className="col-lg-6">
             <div className="pe-lg-4">
               <p className="fs-5 text-muted mb-4 lh-lg">
-                When we moved to Islamabad in 2021, one thing stood out —
-                finding real, homemade food in the city was harder than it
-                should be. Office workers rushed through long days eating cold
-                snacks or fast food. Hostel students missed home-cooked meals.
-                Many were surviving, not thriving.
+                A journey from one hostel room to hundreds of lunchboxes.
               </p>
-
               <p className="fs-5 text-muted mb-4 lh-lg">
-                We, Abdul Muiz and Asmara, experienced this ourselves. Eating
-                out every day never felt right — it was unhealthy, expensive,
-                and lacked the warmth of food prepared with love. We missed that
-                familiar taste of home.
+                When Abdul Muiz first came to Islamabad in 2021 for a job, life
+                away from home was tougher than expected. Living in a hostel
+                meant no real home-cooked food — and eating out every day wasn’t
+                the answer. The city had plenty of hotels, but only a few truly
+                served meals that tasted like home. Good food was either too
+                expensive, too oily, or just not satisfying.
               </p>
-
               <p className="fs-5 text-muted mb-4 lh-lg">
-                That's how{" "}
+                Seeing so many office workers, hostel students, and
+                professionals facing the same struggle, Abdul Muiz and his wife
+                Asmara decided to change that. They launched{" "}
                 <strong className="text-primary-custom">
                   Gharsafareats.pk
                 </strong>{" "}
-                was born. Our goal is simple: deliver fresh, wholesome,
-                homestyle meals to anyone who works hard, studies far from
-                family, and deserves better food options. Every dish is cooked
-                in our own kitchen with fresh ingredients and family recipes.
+                with a simple goal: to deliver healthy, home-style meals to
+                people who deserve better than just another hotel menu.
+              </p>
+              <p className="fs-5 text-muted mb-4 lh-lg">
+                Today, every dish is cooked in our own kitchen with fresh
+                ingredients, packed with care, and delivered right to your door.
+                Whether you’re an office employee or living away from family,
+                Gharsafareats.pk makes sure your meals are as warm and wholesome
+                as home.
               </p>
 
               <div className="d-flex align-items-center p-4 bg-white rounded-4 shadow-sm">
