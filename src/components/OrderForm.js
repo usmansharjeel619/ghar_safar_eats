@@ -1,6 +1,48 @@
 import React, { useState } from "react";
 
 const OrderForm = () => {
+  // Delivery sectors
+  const freeSectors = [
+    "H13",
+    "G13",
+    "G11",
+    "G10",
+    "G9",
+    "G8",
+    "F11",
+    "F10",
+    "F8",
+    "E11",
+  ];
+  const otherSectors = [
+    "D-12",
+    "E-7",
+    "E-8",
+    "E-9",
+    "E-10",
+    "F-5",
+    "F-6",
+    "F-7",
+    "G-5",
+    "G-6",
+    "G-7",
+    "G-12",
+    "G-14",
+    "H-8",
+    "H-9",
+    "H-10",
+    "H-11",
+    "H-12",
+    "I-8",
+    "I-9",
+    "I-10",
+    "I-11",
+    "I-12",
+  ];
+  const extraDeliveryCharge = 700;
+
+  const [selectedSector, setSelectedSector] = useState("free");
+  const [selectedOtherSector, setSelectedOtherSector] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -66,6 +108,17 @@ const OrderForm = () => {
     }
   };
 
+  // Calculate total cost
+  const getTotalCost = () => {
+    const base = parseInt(getPriceByPlan(formData.mealPlan).replace(/,/g, ""));
+    const weekCount = parseInt(formData.week);
+    let delivery = 0;
+    if (selectedSector === "other") {
+      delivery = extraDeliveryCharge * weekCount;
+    }
+    return base * weekCount + delivery;
+  };
+
   const getPlanDescription = (plan) => {
     switch (plan) {
       case "lunch":
@@ -115,7 +168,7 @@ const OrderForm = () => {
                   </p>
                   <div className="d-flex justify-content-center gap-3 flex-wrap">
                     <a
-                      href="https://wa.me/923377236836"
+                      href="https://wa.me/923292893399"
                       className="btn btn-light btn-lg"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -124,7 +177,7 @@ const OrderForm = () => {
                       WhatsApp Us
                     </a>
                     <a
-                      href="tel:+923377236836"
+                      href="tel:+923292893399"
                       className="btn btn-outline-light btn-lg"
                     >
                       <i className="bi bi-telephone-fill me-2"></i>
@@ -194,6 +247,83 @@ const OrderForm = () => {
                         ></textarea>
                       </div>
 
+                      {/* Delivery Area Selection */}
+                      <div className="col-12">
+                        <h4 className="fw-bold text-secondary-custom mb-3 mt-4">
+                          <i className="bi bi-geo-alt-fill me-2"></i>
+                          Select Your Delivery Area
+                        </h4>
+                        <div className="row g-2 mb-2">
+                          {freeSectors.map((sector) => (
+                            <div key={sector} className="col-md-2 col-4">
+                              <button
+                                type="button"
+                                className={`btn w-100 ${
+                                  selectedSector === sector
+                                    ? "btn-primary-custom text-white"
+                                    : "btn-outline-custom"
+                                }`}
+                                style={{
+                                  borderRadius: "20px",
+                                  fontWeight: "600",
+                                  fontSize: "1rem",
+                                }}
+                                onClick={() => {
+                                  setSelectedSector(sector);
+                                  setSelectedOtherSector("");
+                                }}
+                              >
+                                {sector}
+                              </button>
+                            </div>
+                          ))}
+                          <div className="col-md-3 col-6">
+                            <button
+                              type="button"
+                              className={`btn w-100 ${
+                                selectedSector === "other"
+                                  ? "btn-primary-custom text-white"
+                                  : "btn-outline-custom"
+                              }`}
+                              style={{
+                                borderRadius: "20px",
+                                fontWeight: "600",
+                                fontSize: "1rem",
+                              }}
+                              onClick={() => setSelectedSector("other")}
+                            >
+                              None of these
+                            </button>
+                          </div>
+                        </div>
+                        {selectedSector === "other" && (
+                          <div className="mt-3">
+                            <label className="form-label fw-semibold">
+                              Select Other Sector (PKR {extraDeliveryCharge}
+                              /week extra)
+                            </label>
+                            <select
+                              className="form-select"
+                              value={selectedOtherSector}
+                              onChange={(e) =>
+                                setSelectedOtherSector(e.target.value)
+                              }
+                              style={{ borderRadius: "10px" }}
+                            >
+                              <option value="">Choose sector</option>
+                              {otherSectors.map((sector) => (
+                                <option key={sector} value={sector}>
+                                  {sector}
+                                </option>
+                              ))}
+                            </select>
+                            <div className="mt-2 text-danger fw-semibold">
+                              Extra delivery charge: PKR {extraDeliveryCharge}{" "}
+                              per week
+                            </div>
+                          </div>
+                        )}
+                      </div>
                       {/* Meal Plan Selection */}
                       <div className="col-12">
                         <h4 className="fw-bold text-secondary-custom mb-3 mt-4">
@@ -226,13 +356,7 @@ const OrderForm = () => {
                             },
                           ].map((plan) => (
                             <div key={plan.value} className="col-md-4">
-                              <div
-                                className={`card h-100 ${
-                                  formData.mealPlan === plan.value
-                                    ? "border-primary"
-                                    : "border-light"
-                                }`}
-                              >
+                              <div className={`card h-100 border-light`}>
                                 {plan.popular && (
                                   <div className="position-absolute top-0 start-50 translate-middle">
                                     <span className="badge bg-warning text-dark px-2 py-1 rounded-pill small">
@@ -251,17 +375,35 @@ const OrderForm = () => {
                                     onChange={handleInputChange}
                                   />
                                   <label
-                                    className="btn btn-outline-primary w-100 h-100 d-flex flex-column justify-content-center"
+                                    className={`btn w-100 h-100 d-flex flex-column justify-content-center ${
+                                      formData.mealPlan === plan.value
+                                        ? "bg-primary-custom text-white"
+                                        : "btn-outline-custom"
+                                    }`}
                                     htmlFor={`plan-${plan.value}`}
                                     style={{ minHeight: "120px" }}
                                   >
                                     <h6 className="fw-bold mb-2">
                                       {plan.label}
                                     </h6>
-                                    <div className="text-primary fw-bold fs-5">
+                                    <div
+                                      className={`fw-bold fs-5 ${
+                                        formData.mealPlan === plan.value
+                                          ? "text-white"
+                                          : "text-primary-custom"
+                                      }`}
+                                    >
                                       PKR {plan.price}
                                     </div>
-                                    <small className="text-muted">/week</small>
+                                    <small
+                                      className={
+                                        formData.mealPlan === plan.value
+                                          ? "text-white opacity-75"
+                                          : "text-muted"
+                                      }
+                                    >
+                                      /week
+                                    </small>
                                   </label>
                                 </div>
                               </div>
@@ -281,10 +423,10 @@ const OrderForm = () => {
                           onChange={handleInputChange}
                           style={{ borderRadius: "10px" }}
                         >
-                          <option value="1">Week 1</option>
-                          <option value="2">Week 2</option>
-                          <option value="3">Week 3</option>
-                          <option value="4">Week 4</option>
+                          <option value="1">1 Week</option>
+                          <option value="2">2 Weeks</option>
+                          <option value="3">3 Weeks</option>
+                          <option value="4">4 Weeks</option>
                         </select>
                       </div>
 
@@ -336,7 +478,7 @@ const OrderForm = () => {
                                 Total Amount:
                               </span>
                               <span className="fs-4 fw-bold text-primary-custom">
-                                PKR {getPriceByPlan(formData.mealPlan)}
+                                PKR {getTotalCost().toLocaleString()}
                               </span>
                             </div>
                           </div>
@@ -379,9 +521,9 @@ const OrderForm = () => {
                       <div className="col-12 text-center">
                         <button
                           type="submit"
-                          className="btn btn-primary-custom btn-lg px-5 py-3"
+                          className="btn btn-primary-custom btn-lg px-5 py-3 text-white"
                           disabled={isSubmitting}
-                          style={{ borderRadius: "25px" }}
+                          style={{ borderRadius: "15px" }}
                         >
                           {isSubmitting ? (
                             <>
@@ -423,17 +565,17 @@ const OrderForm = () => {
               </p>
               <div className="d-flex justify-content-center gap-3 flex-wrap">
                 <a
-                  href="https://wa.me/923377236836"
+                  href="https://wa.me/923292893399"
                   className="btn btn-success d-flex align-items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <i className="bi bi-whatsapp"></i>
-                  WhatsApp: +92 337 723 6836
+                  WhatsApp: +92 329 289 3399
                 </a>
                 <a
-                  href="tel:+923377236836"
-                  className="btn btn-primary d-flex align-items-center gap-2"
+                  href="tel:+923292893399"
+                  className="btn btn-primary-custom d-flex align-items-center gap-2 text-white"
                 >
                   <i className="bi bi-telephone-fill"></i>
                   Call Now

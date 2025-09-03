@@ -4,7 +4,7 @@
   --secondary-color: #0c1a2d;
   --light-bg: #f8f9fa;
   --text-dark: #333;
-  --border-radius: 15px;
+  --border-radius: 8px;
 }
 
 /* Global Styles */
@@ -73,6 +73,10 @@ body {
 
 .text-secondary-custom {
   color: var(--secondary-color) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
 }
 
 .bg-secondary-custom {

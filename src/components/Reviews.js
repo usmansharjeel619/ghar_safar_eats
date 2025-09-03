@@ -75,11 +75,9 @@ const Reviews = () => {
                 <div key={index} className="col-lg-6">
                   <div className="card card-custom border-0 overflow-hidden">
                     <div
-                      className="position-relative bg-gradient text-white d-flex align-items-center justify-content-center"
+                      className="position-relative bg-light d-flex align-items-center justify-content-center border-bottom"
                       style={{
                         height: "250px",
-                        background:
-                          "linear-gradient(135deg, #0C1A2D 0%, #EC6D00 100%)",
                       }}
                     >
                       <div className="text-center">
@@ -87,21 +85,21 @@ const Reviews = () => {
                           {video.thumbnail}
                         </div>
                         <div
-                          className="btn btn-light btn-lg rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
+                          className="btn btn-primary-custom btn-lg rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3"
                           style={{ width: "80px", height: "80px" }}
                         >
                           <i
-                            className="bi bi-play-fill"
+                            className="bi bi-play-fill text-white"
                             style={{ fontSize: "2rem", marginLeft: "4px" }}
                           ></i>
                         </div>
                       </div>
-                      <div className="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75">
-                        <h6 className="mb-1 fw-semibold">"{video.title}"</h6>
-                        <small className="text-light opacity-75">
-                          — {video.author}
-                        </small>
-                      </div>
+                    </div>
+                    <div className="card-body p-4">
+                      <h6 className="mb-2 fw-semibold text-secondary-custom">
+                        "{video.title}"
+                      </h6>
+                      <small className="text-muted">— {video.author}</small>
                     </div>
                   </div>
                 </div>
@@ -156,38 +154,135 @@ const Reviews = () => {
           </div>
         </div>
 
-        {/* Stats Section */}
+        {/* Stats Section - Clean and elegant design */}
         <div className="row justify-content-center mt-5">
           <div className="col-lg-10">
             <div
-              className="row g-0 rounded-4 overflow-hidden shadow-lg"
-              style={{
-                background: "linear-gradient(135deg, #EC6D00 0%, #0C1A2D 100%)",
-              }}
+              className="card border-0 shadow-sm bg-white"
+              style={{ borderRadius: "15px" }}
             >
-              <div className="col-md-3">
-                <div className="p-4 text-center text-white border-end border-white border-opacity-20">
-                  <h2 className="display-6 fw-bold mb-2">500+</h2>
-                  <p className="mb-0 opacity-90">Happy Customers</p>
+              <div className="card-body p-5">
+                <div className="text-center mb-5">
+                  <h3 className="fw-bold text-secondary-custom mb-3">
+                    Our Success in Numbers
+                  </h3>
+                  <p className="text-muted">
+                    Trusted by thousands across Islamabad
+                  </p>
                 </div>
-              </div>
-              <div className="col-md-3">
-                <div className="p-4 text-center text-white border-end border-white border-opacity-20">
-                  <h2 className="display-6 fw-bold mb-2">4.9</h2>
-                  <div className="mb-2">{renderStars(5)}</div>
-                  <p className="mb-0 opacity-90 small">Average Rating</p>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="p-4 text-center text-white border-end border-white border-opacity-20">
-                  <h2 className="display-6 fw-bold mb-2">10K+</h2>
-                  <p className="mb-0 opacity-90">Meals Delivered</p>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div className="p-4 text-center text-white">
-                  <h2 className="display-6 fw-bold mb-2">95%</h2>
-                  <p className="mb-0 opacity-90">Repeat Customers</p>
+                <div className="row g-0">
+                  <div className="col-lg-3 col-md-6 text-center">
+                    <div className="p-4">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
+                        <i className="bi bi-star-fill text-warning fs-2"></i>
+                      </div>
+                      <h2 className="display-5 fw-bold text-secondary-custom mb-2">
+                        4.9
+                      </h2>
+                      <p className="text-muted mb-0 fw-semibold">
+                        Average Rating
+                      </p>
+                      <small className="text-muted">Based on reviews</small>
+                    </div>
+                  </div>
+                  <div className="col-lg-3 col-md-6 text-center position-relative">
+                    <div className="p-4">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
+                        <i className="bi bi-box-seam text-success fs-2"></i>
+                      </div>
+                      <h2 className="display-5 fw-bold text-secondary-custom mb-2">
+                        10K+
+                      </h2>
+                      <p className="text-muted mb-0 fw-semibold">
+                        Meals Delivered
+                      </p>
+                      <small className="text-muted">Fresh & on time</small>
+                    </div>
+                    <div
+                      className="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block"
+                      style={{
+                        width: "3px",
+                        height: "80px",
+                        backgroundColor: "#EC6D00",
+                      }}
+                    ></div>
+                  </div>
+                  <div className="col-lg-3 col-md-6 text-center position-relative">
+                    <div className="p-4">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
+                        <i className="bi bi-arrow-repeat text-info fs-2"></i>
+                      </div>
+                      <h2 className="display-5 fw-bold text-secondary-custom mb-2">
+                        95%
+                      </h2>
+                      <p className="text-muted mb-0 fw-semibold">
+                        Repeat Customers
+                      </p>
+                      <small className="text-muted">Trust & satisfaction</small>
+                    </div>
+                    <div
+                      className="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block"
+                      style={{
+                        width: "3px",
+                        height: "80px",
+                        backgroundColor: "#EC6D00",
+                      }}
+                    ></div>
+                  </div>
+                  <div className="col-lg-3 col-md-6 text-center position-relative">
+                    <div className="p-4">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "80px",
+                          height: "80px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
+                        <i className="bi bi-people-fill text-primary-custom fs-2"></i>
+                      </div>
+                      <h2 className="display-5 fw-bold text-secondary-custom mb-2">
+                        500+
+                      </h2>
+                      <p className="text-muted mb-0 fw-semibold">
+                        Happy Customers
+                      </p>
+                      <small className="text-muted">Growing community</small>
+                    </div>
+                    <div
+                      className="position-absolute top-50 start-0 translate-middle-y d-none d-lg-block"
+                      style={{
+                        width: "3px",
+                        height: "80px",
+                        backgroundColor: "#EC6D00",
+                      }}
+                    ></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -197,22 +292,37 @@ const Reviews = () => {
         {/* Call to Action */}
         <div className="row justify-content-center mt-5">
           <div className="col-lg-8 text-center">
-            <div className="p-5 bg-light rounded-4">
-              <h3 className="fw-bold text-secondary-custom mb-3">
-                Ready to join our satisfied customers?
-              </h3>
-              <p className="text-muted mb-4">
-                Experience the taste of home delivered fresh to your doorstep
-              </p>
-              <button
-                className="btn btn-primary-custom btn-lg px-5"
-                onClick={() => {
-                  const element = document.getElementById("order-form");
-                  if (element) element.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Start Your Food Journey
-              </button>
+            <div className="card border-0 shadow-sm bg-light">
+              <div className="card-body p-5">
+                <div
+                  className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                  style={{
+                    width: "80px",
+                    height: "80px",
+                    backgroundColor: "#EC6D00",
+                    borderRadius: "50%",
+                  }}
+                >
+                  <i className="bi bi-heart-fill text-white fs-2"></i>
+                </div>
+                <h3 className="fw-bold text-secondary-custom mb-3">
+                  Ready to join our satisfied customers?
+                </h3>
+                <p className="text-muted mb-4">
+                  Experience the taste of home delivered fresh to your doorstep
+                </p>
+                <button
+                  className="btn btn-primary-custom btn-lg px-5"
+                  onClick={() => {
+                    const element = document.getElementById("order-form");
+                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  style={{ borderRadius: "25px" }}
+                >
+                  <i className="bi bi-arrow-right-circle me-2"></i>
+                  Start Your Food Journey
+                </button>
+              </div>
             </div>
           </div>
         </div>

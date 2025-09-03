@@ -19,7 +19,7 @@ const AboutUs = () => {
               <p className="fs-5 text-muted mb-4 lh-lg">
                 When Abdul Muiz first came to Islamabad in 2021 for a job, life
                 away from home was tougher than expected. Living in a hostel
-                meant no real home-cooked food — and eating out every day wasn’t
+                meant no real home-cooked food — and eating out every day wasn't
                 the answer. The city had plenty of hotels, but only a few truly
                 served meals that tasted like home. Good food was either too
                 expensive, too oily, or just not satisfying.
@@ -37,12 +37,12 @@ const AboutUs = () => {
               <p className="fs-5 text-muted mb-4 lh-lg">
                 Today, every dish is cooked in our own kitchen with fresh
                 ingredients, packed with care, and delivered right to your door.
-                Whether you’re an office employee or living away from family,
+                Whether you're an office employee or living away from family,
                 Gharsafareats.pk makes sure your meals are as warm and wholesome
                 as home.
               </p>
 
-              <div className="d-flex align-items-center p-4 bg-white rounded-4 shadow-sm">
+              <div className="d-flex align-items-center p-4 bg-white rounded-4 shadow-sm border-start border-4 border-primary-custom">
                 <div className="flex-shrink-0 me-4">
                   <div
                     className="bg-primary-custom text-white rounded-circle d-flex align-items-center justify-content-center"
@@ -96,8 +96,7 @@ const AboutUs = () => {
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    background:
-                      "linear-gradient(135deg, rgba(12,26,45,0.7) 0%, rgba(236,109,0,0.5) 100%)",
+                    background: "rgba(12, 26, 45, 0.6)",
                     zIndex: 1,
                   }}
                 ></div>
@@ -136,20 +135,6 @@ const AboutUs = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Decorative elements */}
-                <div className="position-absolute top-0 end-0 p-4">
-                  <div
-                    className="bg-white bg-opacity-10 rounded-circle"
-                    style={{ width: "80px", height: "80px" }}
-                  ></div>
-                </div>
-                <div className="position-absolute bottom-0 start-0 p-4">
-                  <div
-                    className="bg-white bg-opacity-10 rounded-circle"
-                    style={{ width: "60px", height: "60px" }}
-                  ></div>
-                </div>
               </div>
 
               {/* Stats Cards */}
@@ -186,62 +171,105 @@ const AboutUs = () => {
           </div>
         </div>
 
-        {/* Vision Statement */}
+        {/* Our Vision for the Future - Clean professional design */}
         <div className="row justify-content-center mt-5">
-          <div className="col-lg-10">
-            <div
-              className="p-5 rounded-4 text-center text-white position-relative overflow-hidden"
-              style={{
-                background: "linear-gradient(135deg, #0C1A2D 0%, #EC6D00 100%)",
-              }}
-            >
-              <div className="position-relative z-index-2">
-                <h3 className="fw-bold mb-4">Our Vision for the Future</h3>
-                <p className="fs-5 mb-4 opacity-90">
-                  Our vision is to make sure no one in Islamabad ever feels far
-                  from home at mealtime. And as we grow, we want to create
-                  opportunities for others who share our mission.
-                </p>
-                <div className="row g-4 mt-4">
+          <div className="col-lg-12">
+            <div className="card border-0 shadow-sm bg-white">
+              <div className="card-body p-5">
+                <div className="text-center mb-5">
+                  <div
+                    className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      backgroundColor: "#f8f9fa",
+                      border: "2px solid #EC6D00",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <i className="bi bi-eye-fill text-primary-custom fs-2"></i>
+                  </div>
+                  <h3 className="fw-bold text-secondary-custom mb-4">
+                    Our Vision for the Future
+                  </h3>
+                  <p className="fs-5 text-muted col-lg-8 mx-auto">
+                    Our vision is to make sure no one in Islamabad ever feels
+                    far from home at mealtime. And as we grow, we want to create
+                    opportunities for others who share our mission.
+                  </p>
+                </div>
+
+                <div className="row g-4">
                   <div className="col-md-4">
-                    <div className="text-center">
-                      <div className="mb-3">
+                    <div className="text-center p-4 h-100">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "70px",
+                          height: "70px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
                         <i
-                          className="bi bi-house-heart-fill"
-                          style={{ fontSize: "2.5rem" }}
+                          className="bi bi-house-heart-fill text-primary-custom"
+                          style={{ fontSize: "2rem" }}
                         ></i>
                       </div>
-                      <h5 className="fw-semibold">Home-Style Cooking</h5>
-                      <p className="small opacity-75">
-                        Every meal prepared with family recipes
+                      <h5 className="fw-semibold text-secondary-custom">
+                        Home-Style Cooking
+                      </h5>
+                      <p className="text-muted">
+                        Every meal prepared with family recipes and traditional
+                        methods
                       </p>
                     </div>
                   </div>
                   <div className="col-md-4">
-                    <div className="text-center">
-                      <div className="mb-3">
+                    <div className="text-center p-4 h-100">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "70px",
+                          height: "70px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
                         <i
-                          className="bi bi-clock-fill"
-                          style={{ fontSize: "2.5rem" }}
+                          className="bi bi-clock-fill text-primary-custom"
+                          style={{ fontSize: "2rem" }}
                         ></i>
                       </div>
-                      <h5 className="fw-semibold">Always On Time</h5>
-                      <p className="small opacity-75">
-                        Fresh meals delivered when you need them
+                      <h5 className="fw-semibold text-secondary-custom">
+                        Always On Time
+                      </h5>
+                      <p className="text-muted">
+                        Fresh meals delivered when you need them, every day
                       </p>
                     </div>
                   </div>
                   <div className="col-md-4">
-                    <div className="text-center">
-                      <div className="mb-3">
+                    <div className="text-center p-4 h-100">
+                      <div
+                        className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                        style={{
+                          width: "70px",
+                          height: "70px",
+                          backgroundColor: "#f8f9fa",
+                          borderRadius: "50%",
+                        }}
+                      >
                         <i
-                          className="bi bi-heart-pulse-fill"
-                          style={{ fontSize: "2.5rem" }}
+                          className="bi bi-heart-pulse-fill text-primary-custom"
+                          style={{ fontSize: "2rem" }}
                         ></i>
                       </div>
-                      <h5 className="fw-semibold">Healthy & Fresh</h5>
-                      <p className="small opacity-75">
-                        Nutritious ingredients, prepared daily
+                      <h5 className="fw-semibold text-secondary-custom">
+                        Healthy & Fresh
+                      </h5>
+                      <p className="text-muted">
+                        Nutritious ingredients, prepared daily with care
                       </p>
                     </div>
                   </div>

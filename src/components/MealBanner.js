@@ -94,7 +94,8 @@ const MealBanner = () => {
                     style={{
                       width: "80px",
                       height: "80px",
-                      background: "linear-gradient(135deg, #EC6D00, #ff8c42)",
+                      backgroundColor: "#f8f9fa",
+                      border: "2px solid #EC6D00",
                       borderRadius: "50%",
                       fontSize: "2.5rem",
                     }}
@@ -116,29 +117,43 @@ const MealBanner = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
+        {/* Ready to taste home section - Clean professional design */}
         <div className="row justify-content-center mt-5">
-          <div className="col-lg-6 text-center">
-            <div
-              className="p-5 rounded-4 text-white position-relative"
-              style={{
-                background: "linear-gradient(135deg, #0C1A2D 0%, #EC6D00 100%)",
-              }}
-            >
-              <h4 className="fw-bold mb-3">Ready to taste home?</h4>
-              <p className="mb-4">
-                Join hundreds of satisfied customers who trust us for their
-                daily meals
-              </p>
-              <button
-                className="btn btn-light btn-lg px-4 fw-semibold"
-                onClick={() => {
-                  const element = document.getElementById("weekly-plans");
-                  if (element) element.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                View All Plans
-              </button>
+          <div className="col-lg-8">
+            <div className="card border-0 shadow-sm bg-white">
+              <div className="card-body p-5 text-center">
+                <div className="mb-4">
+                  <div
+                    className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      backgroundColor: "#EC6D00",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <i className="bi bi-house-heart-fill text-white fs-2"></i>
+                  </div>
+                </div>
+                <h4 className="fw-bold text-secondary-custom mb-3">
+                  Ready to taste home?
+                </h4>
+                <p className="text-muted mb-4">
+                  Join hundreds of satisfied customers who trust us for their
+                  daily meals
+                </p>
+                <button
+                  className="btn btn-primary-custom btn-lg px-4 fw-semibold"
+                  onClick={() => {
+                    const element = document.getElementById("weekly-plans");
+                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  style={{ borderRadius: "25px" }}
+                >
+                  <i className="bi bi-arrow-right-circle me-2"></i>
+                  View All Plans
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -12,25 +12,25 @@ const Footer = () => {
     {
       name: "Instagram",
       icon: "bi-instagram",
-      url: "https://instagram.com/gharsafareats",
+      url: "https://www.instagram.com/gharsafareats.pk/",
       color: "#d62976",
     },
     {
       name: "TikTok",
       icon: "bi-tiktok",
-      url: "https://tiktok.com/@gharsafareats",
+      url: "https://www.tiktok.com/@gharsafareats.pk",
       color: "#25F4EE",
     },
     {
       name: "Facebook",
       icon: "bi-facebook",
-      url: "https://fb.com/gharsafareats",
+      url: "https://www.facebook.com/people/gharsafareatspk/61579956823631/",
       color: "#1877F2",
     },
     {
       name: "WhatsApp",
       icon: "bi-whatsapp",
-      url: "https://wa.me/923377236836",
+      url: "https://wa.me/923292893399",
       color: "#25D366",
     },
   ];
@@ -134,10 +134,10 @@ const Footer = () => {
               </div>
               <div>
                 <a
-                  href="tel:+923377236836"
+                  href="tel:+923292893399"
                   className="text-white text-decoration-none opacity-90"
                 >
-                  +92 337 723 6836
+                  +92 329 289 3399
                 </a>
               </div>
             </div>
@@ -151,7 +151,7 @@ const Footer = () => {
               </div>
               <div>
                 <a
-                  href="https://wa.me/923377236836"
+                  href="https://wa.me/923292893399"
                   className="text-white text-decoration-none opacity-90"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -219,18 +219,11 @@ const Footer = () => {
                 <div className="d-flex flex-wrap justify-content-center gap-2">
                   {[
                     "H13",
-                    "H12",
-                    "H11",
-                    "H10",
-                    "H9",
-                    "H8",
                     "G13",
                     "G11",
                     "G10",
                     "G9",
                     "G8",
-                    "G7",
-                    "G6",
                     "F11",
                     "F10",
                     "F8",
@@ -245,7 +238,7 @@ const Footer = () => {
                   ))}
                 </div>
                 <p className="mt-3 mb-0 small opacity-75">
-                  Other I or D sectors: PKR 1,050/week delivery charge
+                  Other sectors: PKR 700/week delivery charge
                 </p>
               </div>
             </div>
@@ -273,7 +266,7 @@ const Footer = () => {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/923377236836"
+        href="https://wa.me/923292893399"
         target="_blank"
         rel="noopener noreferrer"
         className="position-fixed bottom-0 end-0 m-4 btn btn-success rounded-circle shadow-lg d-flex align-items-center justify-content-center"

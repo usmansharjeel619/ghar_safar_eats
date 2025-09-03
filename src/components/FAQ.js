@@ -121,28 +121,36 @@ const FAQ = () => {
           </div>
         </div>
 
-        {/* Feedback Section */}
+        {/* Have a suggestion for us? - Clean professional design */}
         <div className="row justify-content-center mt-5">
           <div className="col-lg-8">
-            <div
-              className="card border-0 shadow-lg overflow-hidden"
-              style={{
-                background: "linear-gradient(135deg, #0C1A2D 0%, #EC6D00 100%)",
-              }}
-            >
-              <div className="card-body p-5 text-white text-center">
-                <div className="mb-4">
-                  <i
-                    className="bi bi-lightbulb-fill"
-                    style={{ fontSize: "3rem" }}
-                  ></i>
+            <div className="card border-0 shadow-sm bg-white">
+              <div className="card-body p-5">
+                <div className="text-center mb-4">
+                  <div
+                    className="mx-auto d-flex align-items-center justify-content-center mb-3"
+                    style={{
+                      width: "80px",
+                      height: "80px",
+                      backgroundColor: "#f8f9fa",
+                      border: "2px solid #EC6D00",
+                      borderRadius: "50%",
+                    }}
+                  >
+                    <i
+                      className="bi bi-lightbulb-fill text-primary-custom"
+                      style={{ fontSize: "2.5rem" }}
+                    ></i>
+                  </div>
+                  <h3 className="fw-bold text-secondary-custom mb-3">
+                    {feedbackSection.title}
+                  </h3>
+                  <p className="text-muted mb-4 fs-5">
+                    {feedbackSection.description}
+                  </p>
                 </div>
-                <h3 className="fw-bold mb-3">{feedbackSection.title}</h3>
-                <p className="mb-4 opacity-90 fs-5">
-                  {feedbackSection.description}
-                </p>
 
-                <form className="row g-3 justify-content-center">
+                <form className="row g-3">
                   <div className="col-md-6">
                     <input
                       type="text"
@@ -170,43 +178,17 @@ const FAQ = () => {
                       style={{ borderRadius: "15px" }}
                     ></textarea>
                   </div>
-                  <div className="col-auto">
+                  <div className="col-12 text-center">
                     <button
                       type="submit"
-                      className="btn btn-light btn-lg px-5 fw-semibold"
-                      style={{ borderRadius: "25px", color: "#0C1A2D" }}
+                      className="btn btn-primary-custom btn-lg px-5 fw-semibold text-white"
+                      style={{ borderRadius: "25px" }}
                     >
                       <i className="bi bi-send-fill me-2"></i>
                       Submit Suggestion
                     </button>
                   </div>
                 </form>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="position-absolute top-0 start-0 p-4 opacity-20">
-                <i
-                  className="bi bi-chat-heart-fill"
-                  style={{ fontSize: "2rem" }}
-                ></i>
-              </div>
-              <div className="position-absolute top-0 end-0 p-4 opacity-20">
-                <i
-                  className="bi bi-emoji-smile-fill"
-                  style={{ fontSize: "2rem" }}
-                ></i>
-              </div>
-              <div className="position-absolute bottom-0 start-0 p-4 opacity-20">
-                <i
-                  className="bi bi-heart-fill"
-                  style={{ fontSize: "1.5rem" }}
-                ></i>
-              </div>
-              <div className="position-absolute bottom-0 end-0 p-4 opacity-20">
-                <i
-                  className="bi bi-star-fill"
-                  style={{ fontSize: "1.5rem" }}
-                ></i>
               </div>
             </div>
           </div>
@@ -218,15 +200,15 @@ const FAQ = () => {
             <p className="text-muted mb-3">Still have questions?</p>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
               <a
-                href="tel:+923377236836"
-                className="btn btn-outline-primary btn-lg d-flex align-items-center gap-2"
+                href="tel:+923292893399"
+                className="btn btn-primary-custom btn-lg d-flex align-items-center gap-2 text-white"
                 style={{ borderRadius: "25px" }}
               >
                 <i className="bi bi-telephone-fill"></i>
                 Call Us
               </a>
               <a
-                href="https://wa.me/923377236836"
+                href="https://wa.me/923292893399"
                 className="btn btn-success btn-lg d-flex align-items-center gap-2"
                 style={{ borderRadius: "25px" }}
                 target="_blank"

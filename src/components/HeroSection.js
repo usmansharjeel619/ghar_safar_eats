@@ -15,21 +15,21 @@ const HeroSection = () => {
         "Fresh meals for office workers, hostel students, and busy professionals.",
       buttonText: "Order Now",
       action: () => scrollToSection("order-form"),
-      bgImage: "linear-gradient(135deg, #EC6D00 0%, #ff8c42 100%)",
+      image: "/hero-image-1.jpg", // Replace with actual image paths
     },
     {
       title: "Choose your plan, Monday to Friday.",
       subtitle: "Lunch, dinner, or both — no compromise on taste.",
       buttonText: "View Menu",
       action: () => scrollToSection("weekly-plans"),
-      bgImage: "linear-gradient(135deg, #0C1A2D 0%, #1a2f4a 100%)",
+      image: "/hero-image-2.jpg", // Replace with actual image paths
     },
     {
       title: "Made with love, packed with care.",
       subtitle: "Affordable weekly meal plans for people far from home.",
       buttonText: "Get Started",
       action: () => scrollToSection("weekly-plans"),
-      bgImage: "linear-gradient(135deg, #EC6D00 0%, #0C1A2D 100%)",
+      image: "/hero-image-3.jpg", // Replace with actual image paths
     },
   ];
 
@@ -62,12 +62,31 @@ const HeroSection = () => {
               <div
                 className="d-flex align-items-center justify-content-center text-white position-relative"
                 style={{
-                  background: slide.bgImage,
                   minHeight: "90vh",
                   position: "relative",
+                  backgroundImage: `url(${slide.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
                 }}
               >
-                <div className="container text-center">
+                {/* Dark overlay for text readability */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "rgba(12, 26, 45, 0.7)",
+                    zIndex: 1,
+                  }}
+                ></div>
+
+                <div
+                  className="container text-center"
+                  style={{ position: "relative", zIndex: 2 }}
+                >
                   <div className="row justify-content-center">
                     <div className="col-lg-8">
                       <h1 className="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
@@ -77,18 +96,17 @@ const HeroSection = () => {
                         {slide.subtitle}
                       </p>
                       <button
-                        className="btn btn-light btn-lg px-5 py-3 fw-semibold animate__animated animate__fadeInUp animate__delay-2s"
+                        className="btn btn-primary-custom btn-lg px-5 py-3 fw-semibold animate__animated animate__fadeInUp animate__delay-2s"
                         onClick={slide.action}
                         style={{
                           borderRadius: "50px",
-                          color: "#0C1A2D",
                           fontSize: "1.2rem",
                           transition: "all 0.3s ease",
                         }}
                         onMouseEnter={(e) => {
                           e.target.style.transform = "translateY(-3px)";
                           e.target.style.boxShadow =
-                            "0 10px 25px rgba(0,0,0,0.2)";
+                            "0 10px 25px rgba(236,109,0,0.3)";
                         }}
                         onMouseLeave={(e) => {
                           e.target.style.transform = "translateY(0)";
@@ -99,36 +117,6 @@ const HeroSection = () => {
                       </button>
                     </div>
                   </div>
-                </div>
-
-                {/* Decorative Elements */}
-                <div
-                  className="position-absolute"
-                  style={{ top: "20%", left: "10%", opacity: 0.1 }}
-                >
-                  <div
-                    style={{
-                      width: "100px",
-                      height: "100px",
-                      borderRadius: "50%",
-                      background: "white",
-                      animation: "float 3s ease-in-out infinite",
-                    }}
-                  ></div>
-                </div>
-                <div
-                  className="position-absolute"
-                  style={{ bottom: "30%", right: "15%", opacity: 0.1 }}
-                >
-                  <div
-                    style={{
-                      width: "60px",
-                      height: "60px",
-                      borderRadius: "50%",
-                      background: "white",
-                      animation: "float 3s ease-in-out infinite reverse",
-                    }}
-                  ></div>
                 </div>
               </div>
             </div>
@@ -152,18 +140,6 @@ const HeroSection = () => {
           <span className="carousel-control-next-icon"></span>
         </button>
       </div>
-
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-      `}</style>
     </section>
   );
 };
