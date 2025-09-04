@@ -182,7 +182,7 @@ const FAQ = () => {
                     <button
                       type="submit"
                       className="btn btn-primary-custom btn-lg px-5 fw-semibold text-white"
-                      style={{ borderRadius: "25px" }}
+                      style={{ borderRadius: "15px" }}
                     >
                       <i className="bi bi-send-fill me-2"></i>
                       Submit Suggestion
@@ -202,7 +202,7 @@ const FAQ = () => {
               <a
                 href="tel:+923292893399"
                 className="btn btn-primary-custom btn-lg d-flex align-items-center gap-2 text-white"
-                style={{ borderRadius: "25px" }}
+                style={{ borderRadius: "15px" }}
               >
                 <i className="bi bi-telephone-fill"></i>
                 Call Us
@@ -210,7 +210,7 @@ const FAQ = () => {
               <a
                 href="https://wa.me/923292893399"
                 className="btn btn-success btn-lg d-flex align-items-center gap-2"
-                style={{ borderRadius: "25px" }}
+                style={{ borderRadius: "15px" }}
                 target="_blank"
                 rel="noopener noreferrer"
               >

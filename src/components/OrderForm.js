@@ -264,7 +264,7 @@ const OrderForm = () => {
                                     : "btn-outline-custom"
                                 }`}
                                 style={{
-                                  borderRadius: "20px",
+                                  borderRadius: "15px",
                                   fontWeight: "600",
                                   fontSize: "1rem",
                                 }}
@@ -286,7 +286,7 @@ const OrderForm = () => {
                                   : "btn-outline-custom"
                               }`}
                               style={{
-                                borderRadius: "20px",
+                                borderRadius: "15px",
                                 fontWeight: "600",
                                 fontSize: "1rem",
                               }}

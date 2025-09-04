@@ -99,7 +99,7 @@ const HeroSection = () => {
                         className="btn btn-primary-custom btn-lg px-5 py-3 fw-semibold animate__animated animate__fadeInUp animate__delay-2s"
                         onClick={slide.action}
                         style={{
-                          borderRadius: "50px",
+                          borderRadius: "15px",
                           fontSize: "1.2rem",
                           transition: "all 0.3s ease",
                         }}

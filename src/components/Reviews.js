@@ -317,7 +317,7 @@ const Reviews = () => {
                     const element = document.getElementById("order-form");
                     if (element) element.scrollIntoView({ behavior: "smooth" });
                   }}
-                  style={{ borderRadius: "25px" }}
+                  style={{ borderRadius: "15px" }}
                 >
                   <i className="bi bi-arrow-right-circle me-2"></i>
                   Start Your Food Journey

@@ -148,7 +148,7 @@ const MealBanner = () => {
                     const element = document.getElementById("weekly-plans");
                     if (element) element.scrollIntoView({ behavior: "smooth" });
                   }}
-                  style={{ borderRadius: "25px" }}
+                  style={{ borderRadius: "15px" }}
                 >
                   <i className="bi bi-arrow-right-circle me-2"></i>
                   View All Plans
