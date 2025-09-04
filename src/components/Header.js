@@ -48,7 +48,7 @@ const Header = () => {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto align-items-center">
+          <ul className="navbar-nav ms-auto align-items-left">
             <li className="nav-item">
               <button
                 className="nav-link btn btn-link text-secondary-custom fw-semibold"

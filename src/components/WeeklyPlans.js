@@ -126,7 +126,7 @@ const WeeklyPlans = () => {
                     </span>
                     <span className="fs-6 text-muted">{plan.period}</span>
                   </div>
-                  <ul className="list-unstyled mb-4">
+                  <ul className="list-unstyled mb-4 text-start ps-5">
                     {plan.features.map((feature, idx) => (
                       <li key={idx} className="mb-2">
                         <i className="bi bi-check-circle-fill text-success me-2"></i>
